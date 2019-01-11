@@ -1,0 +1,6 @@
+---
+applications:
+- name: SpringBootDemo
+  instances: 1
+  host: gauravspringbootapp
+  path: target/SpringBootDemo-0.0.1-SNAPSHOT.jar
