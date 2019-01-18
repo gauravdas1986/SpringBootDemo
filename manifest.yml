@@ -2,5 +2,6 @@
 applications:
 - name: SpringBootDemo
   instances: 1
+  memory: 512M
   host: gauravspringbootapp
   path: target/SpringBootDemo-0.0.1-SNAPSHOT.jar
