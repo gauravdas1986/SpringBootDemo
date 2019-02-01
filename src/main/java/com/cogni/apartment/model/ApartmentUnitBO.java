@@ -1,5 +1,6 @@
 package com.cogni.apartment.model;
 
+/*POJO for a apartment details*/
 public class ApartmentUnitBO {
 
 	private int apartment_id;

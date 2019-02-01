@@ -1,21 +1,34 @@
 package com.cogni.apartment.model;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Table(name = "emp")
-@EntityListeners(AuditingEntityListener.class)
+//@EntityListeners(AuditingEntityListener.class)
 /*@JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
         allowGetters = true)*/
 public class Emp {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Emp(){
+		super();
+	};
+    public Emp(Long emp_id,  String emp_name,  String emp_dept,  String emp_sal) {
+		super();
+		this.emp_id = emp_id;
+		this.emp_name = emp_name;
+		this.emp_dept = emp_dept;
+		this.emp_sal = emp_sal;
+	}
+
+	@Id
     private Long emp_id;
 
     @NotBlank
@@ -58,7 +71,5 @@ public class Emp {
 	public void setEmp_sal(String emp_sal) {
 		this.emp_sal = emp_sal;
 	}
-
-   
 
 }

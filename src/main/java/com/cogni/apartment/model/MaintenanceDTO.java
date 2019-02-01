@@ -1,5 +1,7 @@
 package com.cogni.apartment.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -14,8 +16,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Table(name = "maintenance_master")
 @EntityListeners(AuditingEntityListener.class)
 
-public class MaintenanceDTO {
+public class MaintenanceDTO implements Serializable{
 
+	/*Composite primary key*/
 	@EmbeddedId
 	private MaintenanceKey key;
 
