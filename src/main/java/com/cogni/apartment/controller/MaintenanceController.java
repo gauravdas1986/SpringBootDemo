@@ -11,6 +11,7 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import com.cogni.apartment.model.MaintenanceDTO;
 import com.cogni.apartment.model.RuleBO;
 import com.cogni.apartment.repository.EmpRepository;
 import com.cogni.apartment.repository.MaintenanceRepository;
+import com.cogni.apartment.service.ConsumerService;
 import com.cogni.apartment.service.MaintenanceService;
 import com.cogni.apartment.serviceImpl.MaintenanceServiceImpl;
 import com.cogni.apartment.util.ApartmentDataHelper;
@@ -48,15 +50,18 @@ public class MaintenanceController {
 	@Autowired
 	@Qualifier("apartmentJob")
 	Job apartmentManagementJob;
+	
+	@Autowired
+    private ConsumerService consumerService;
 
 	@GetMapping("/allemp")
 	public List<Emp> getAllNotes() {
 		return empRepository.findAll();
 	}
 
-	@GetMapping("/hello")
-	public String hello() {
-		return "HELLO BNNBn";
+	@GetMapping("/hello/{username}")
+	public String hello(@PathVariable("username") String username) {
+		return 	consumerService.getProduct(username);
 	}
 
 	@GetMapping("/get_maintenance_data")
