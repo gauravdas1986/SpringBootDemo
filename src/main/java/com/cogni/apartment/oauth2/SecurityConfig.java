@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
     			roles("ADMIN").build();
         return new InMemoryUserDetailsManager(user,userAdmin);
     }
+    
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new  BCryptPasswordEncoder();
@@ -50,5 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
                 .and()
                 .logout() // Metodo get pues he desabilitado CSRF
                 .permitAll();
+        
+      /*  http.requestMatchers().antMatchers("/login", "/oauth/authorize", "/oauth/token").and().authorizeRequests().anyRequest()
+		.authenticated().and().formLogin().permitAll();*/
     }
 }

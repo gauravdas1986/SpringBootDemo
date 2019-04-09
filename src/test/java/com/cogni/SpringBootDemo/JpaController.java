@@ -1,4 +1,4 @@
-package com.cogni.apartment.controller;
+package com.cogni.SpringBootDemo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cogni.apartment.jpa.InsertTest;
 import com.cogni.apartment.model.Emp;
 import com.cogni.apartment.model.MaintenanceDTO;
 import com.cogni.apartment.model.MaintenanceKey;

@@ -1,4 +1,4 @@
-package com.cogni.apartment.rabbit;
+package com.cogni.SpringBootDemo;
 
 import java.util.List;
 import java.util.Map;
@@ -17,7 +17,7 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class Producer {
 
-	private final static String QUEUE_NAME = "PRODUCER";
+	private final static String QUEUE_NAME = "TEST_QUEUE";
 
 	public static void main(String[] argv) throws Exception {
 		ConnectionFactory factory = new ConnectionFactory();

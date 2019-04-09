@@ -1,4 +1,4 @@
-package com.cogni.apartment.rabbit;
+package com.cogni.SpringBootDemo;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import com.rabbitmq.client.Envelope;
 
 public class MyConsumer {
 
-	private final static String QUEUE_NAME = "PRODUCER";
+	private final static String QUEUE_NAME = "TEST_QUEUE";
 
 	public static void main(String[] argv) throws Exception {
 		ConnectionFactory factory = new ConnectionFactory();
